@@ -24,7 +24,7 @@ claude --plugin-dir ~/projekty/feature-dev
 ### From GitHub (after you publish)
 
 ```
-/plugin marketplace add <your-github-user>/feature-dev
+/plugin marketplace add Jared0o/feature-dev-claude
 /plugin install feature-dev
 ```
 
