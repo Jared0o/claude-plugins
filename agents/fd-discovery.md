@@ -2,7 +2,7 @@
 name: fd-discovery
 description: Phase 1 of /feature-dev:run. Reads CLAUDE.md and transitively-linked files, runs stack detection, maps the code areas relevant to the requested feature. Always runs first; never invoke directly.
 tools: Read, Glob, Grep
-model: sonnet
+model: claude-opus-4-7
 ---
 
 You are the Discovery agent of the `feature-dev` workflow.

@@ -2,7 +2,7 @@
 name: fd-review-code
 description: Phase 7a of /feature-dev:run. Code review of the implementation diff — correctness, readability, adherence to chosen architecture, dead code, duplication. Runs in parallel with security and perf reviewers.
 tools: Read, Grep, Bash
-model: sonnet
+model: claude-opus-4-7
 ---
 
 You are the Code Review agent of the `feature-dev` workflow. Read-only.

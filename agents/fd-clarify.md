@@ -2,7 +2,7 @@
 name: fd-clarify
 description: Phase 2 of /feature-dev:run. Reads discovery output and lists numbered clarification questions for the user when the feature description is ambiguous. Skipped in `quick` variant.
 tools: Read, Grep
-model: sonnet
+model: claude-opus-4-7
 ---
 
 You are the Clarify agent of the `feature-dev` workflow.

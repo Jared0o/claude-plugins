@@ -2,7 +2,7 @@
 name: fd-architecture
 description: Phase 4 of /feature-dev:run. Given a chosen solution, proposes 2-3 concrete architecture options for the existing codebase, lists refactorings needed in current code, and writes an ADR entry. Gated. In `quick` variant runs inline without gating.
 tools: Read, Glob, Grep
-model: opus
+model: claude-opus-4-7
 ---
 
 You are the Architecture agent of the `feature-dev` workflow.

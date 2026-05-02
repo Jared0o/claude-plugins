@@ -4,19 +4,21 @@ All agents are invoked by the orchestrator (`/feature-dev:run`) — never call t
 
 Each agent reads `<art_dir>/meta.json` first, writes an artifact named `NN-<phase>.md`, and ends that artifact with a `## SUMMARY` block.
 
+All **analysis** agents (read-only — discovery, clarify, solutions, architecture, code/security/perf review) use **`claude-opus-4-7`** (latest Opus) for deepest reasoning. **Producing** agents (implementation, integration-tests, docs, CLAUDE.md update) use **`sonnet`** because the work is more mechanical and Opus would significantly raise cost per run.
+
 | # | Agent | Model | Tools | Writes | Skipped in |
 |---|-------|-------|-------|--------|------------|
-| 1 | fd-discovery       | sonnet | Read, Glob, Grep                       | `01-discovery.md`        | never  |
-| 2 | fd-clarify         | sonnet | Read, Grep                              | `02-clarify.md`          | quick  |
-| 3 | fd-solutions       | sonnet | Read, Glob, Grep                       | `03-solutions.md`        | quick  |
-| 4 | fd-architecture    | opus   | Read, Glob, Grep                       | `04-architecture.md`, `decisions.md` | — |
-| 5 | fd-implementation  | sonnet | Read, Write, Edit, Bash, Glob, Grep    | `05-implementation.md` + code | — |
-| 6 | fd-integration-tests | sonnet | Read, Write, Edit, Bash, Glob, Grep | `06-integration.md`       | quick + when not crossing boundaries |
-| 7a| fd-review-code     | sonnet | Read, Grep, Bash                       | `07a-review-code.md`     | — |
-| 7b| fd-review-security | opus   | Read, Grep, Bash                       | `07b-review-security.md` | quick |
-| 7c| fd-review-perf     | sonnet | Read, Grep, Bash                       | `07c-review-perf.md`     | quick + standard (unless hot path) |
-| 8 | fd-docs            | sonnet | Read, Write, Edit, Glob, Grep          | `08-docs.md` + project docs | — |
-| 9 | fd-claudemd        | sonnet | Read, Edit, Glob, Grep                 | `09-claudemd.md` + CLAUDE.md | quick |
+| 1 | fd-discovery       | claude-opus-4-7 | Read, Glob, Grep                | `01-discovery.md`        | never  |
+| 2 | fd-clarify         | claude-opus-4-7 | Read, Grep                      | `02-clarify.md`          | quick  |
+| 3 | fd-solutions       | claude-opus-4-7 | Read, Glob, Grep                | `03-solutions.md`        | quick  |
+| 4 | fd-architecture    | claude-opus-4-7 | Read, Glob, Grep                | `04-architecture.md`, `decisions.md` | — |
+| 5 | fd-implementation  | sonnet          | Read, Write, Edit, Bash, Glob, Grep | `05-implementation.md` + code | — |
+| 6 | fd-integration-tests | sonnet        | Read, Write, Edit, Bash, Glob, Grep | `06-integration.md` | quick + when not crossing boundaries |
+| 7a| fd-review-code     | claude-opus-4-7 | Read, Grep, Bash                | `07a-review-code.md`     | — |
+| 7b| fd-review-security | claude-opus-4-7 | Read, Grep, Bash                | `07b-review-security.md` | quick |
+| 7c| fd-review-perf     | claude-opus-4-7 | Read, Grep, Bash                | `07c-review-perf.md`     | quick + standard (unless hot path) |
+| 8 | fd-docs            | sonnet          | Read, Write, Edit, Glob, Grep   | `08-docs.md` + project docs | — |
+| 9 | fd-claudemd        | sonnet          | Read, Edit, Glob, Grep          | `09-claudemd.md` + CLAUDE.md | quick |
 
 ## fd-discovery
 

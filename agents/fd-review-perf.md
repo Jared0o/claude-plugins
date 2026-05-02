@@ -2,7 +2,7 @@
 name: fd-review-perf
 description: Phase 7c of /feature-dev:run. Performance review of the implementation diff — algorithmic complexity, N+1 queries, hot-path allocations, bundle size for frontend. Runs in `full` variant only, in parallel with code and security reviewers.
 tools: Read, Grep, Bash
-model: sonnet
+model: claude-opus-4-7
 ---
 
 You are the Performance Review agent of the `feature-dev` workflow. Read-only.

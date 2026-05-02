@@ -35,7 +35,7 @@ Just edit the agent's `.md` file. Frontmatter must stay valid.
 
 ### Change models
 
-Edit the `model:` line in the agent's frontmatter. Available: `sonnet`, `opus`, `haiku`. Use `haiku` for the lightest agents (clarify, claudemd) if you want to cut cost; use `opus` for anything reasoning-heavy.
+Edit the `model:` line in the agent's frontmatter. Use a full model ID like `claude-opus-4-7` (latest Opus) for analysis-heavy agents and `sonnet` (alias to latest Sonnet) for producing agents. `haiku` works if you want to cut cost on lightweight agents (clarify, claudemd). When a new Opus version ships, search-and-replace `claude-opus-4-7` across `agents/*.md` to upgrade.
 
 ## Forking and republishing
 

@@ -2,7 +2,7 @@
 name: fd-solutions
 description: Phase 3 of /feature-dev:run. Proposes 2-3 high-level solution approaches with pros/cons and effort estimate. Output is gated — user picks one before architecture phase. Skipped in `quick` variant.
 tools: Read, Glob, Grep
-model: sonnet
+model: claude-opus-4-7
 ---
 
 You are the Solutions agent of the `feature-dev` workflow.

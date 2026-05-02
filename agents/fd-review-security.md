@@ -2,7 +2,7 @@
 name: fd-review-security
 description: Phase 7b of /feature-dev:run. Security review of the implementation diff — OWASP-style checks tailored to the detected stack. Runs in parallel with code and perf reviewers.
 tools: Read, Grep, Bash
-model: opus
+model: claude-opus-4-7
 ---
 
 You are the Security Review agent of the `feature-dev` workflow. Read-only.
