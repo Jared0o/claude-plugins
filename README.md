@@ -11,13 +11,13 @@ A personal marketplace of Claude Code plugins maintained by [@Jared0o](https://g
 Then install any plugin from the table below:
 
 ```
-/plugin install <plugin-name>@claude-plugins
+/plugin install <plugin-name>@jared0o-plugins
 ```
 
 To pull updates later:
 
 ```
-/plugin marketplace update claude-plugins
+/plugin marketplace update jared0o-plugins
 ```
 
 ## Plugins in this marketplace
@@ -25,6 +25,7 @@ To pull updates later:
 | Plugin | Description | Docs |
 |--------|-------------|------|
 | [`feature-dev`](plugins/feature-dev/) | Orchestrator workflow with gated phases for designing, implementing, reviewing, and documenting features (.NET / Go / React / Next.js / Angular). | [README](plugins/feature-dev/README.md) · [docs/](plugins/feature-dev/docs/) |
+| [`project-init`](plugins/project-init/) | .NET 10 modular monolith scaffolder — initializes a solution and adds modules following the architecture of [Jared0o/Ecommerce](https://github.com/Jared0o/Ecommerce) (Mediator, Result&lt;T&gt;, EF Core+Postgres, xunit+Testcontainers). | [README](plugins/project-init/README.md) · [docs/](plugins/project-init/docs/) |
 
 ## Repo layout
 
@@ -33,11 +34,19 @@ To pull updates later:
 ├── .claude-plugin/
 │   └── marketplace.json     # marketplace manifest (lists every plugin below)
 ├── plugins/
-│   └── feature-dev/         # one directory per plugin
+│   ├── feature-dev/         # one directory per plugin
+│   │   ├── .claude-plugin/plugin.json
+│   │   ├── commands/
+│   │   ├── agents/
+│   │   ├── _shared/
+│   │   ├── docs/
+│   │   ├── README.md
+│   │   └── CHANGELOG.md
+│   └── project-init/
 │       ├── .claude-plugin/plugin.json
 │       ├── commands/
 │       ├── agents/
-│       ├── _shared/
+│       ├── templates/       # *.tmpl scaffold files with {{Placeholder}} substitution
 │       ├── docs/
 │       ├── README.md
 │       └── CHANGELOG.md
@@ -57,7 +66,7 @@ To pull updates later:
    }
    ```
 3. Add a row to the table above.
-4. Commit and push. Existing users pick it up via `/plugin marketplace update claude-plugins`.
+4. Commit and push. Existing users pick it up via `/plugin marketplace update jared0o-plugins`.
 
 ## Local development
 
@@ -71,7 +80,7 @@ Or test the marketplace itself locally:
 
 ```
 /plugin marketplace add C:\Users\jaroslaw.przybyl\projekty\feature-dev
-/plugin install <plugin-name>@claude-plugins
+/plugin install <plugin-name>@jared0o-plugins
 ```
 
 ## License
