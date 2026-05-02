@@ -1,23 +1,23 @@
-# feature-dev-claude — a Claude Code plugin marketplace
+# claude-plugins — a Claude Code plugin marketplace
 
 A personal marketplace of Claude Code plugins maintained by [@Jared0o](https://github.com/Jared0o).
 
 ## Install the marketplace
 
 ```
-/plugin marketplace add Jared0o/feature-dev-claude
+/plugin marketplace add Jared0o/claude-plugins
 ```
 
 Then install any plugin from the table below:
 
 ```
-/plugin install <plugin-name>@feature-dev-claude
+/plugin install <plugin-name>@claude-plugins
 ```
 
 To pull updates later:
 
 ```
-/plugin marketplace update feature-dev-claude
+/plugin marketplace update claude-plugins
 ```
 
 ## Plugins in this marketplace
@@ -57,7 +57,7 @@ To pull updates later:
    }
    ```
 3. Add a row to the table above.
-4. Commit and push. Existing users pick it up via `/plugin marketplace update feature-dev-claude`.
+4. Commit and push. Existing users pick it up via `/plugin marketplace update claude-plugins`.
 
 ## Local development
 
@@ -71,7 +71,7 @@ Or test the marketplace itself locally:
 
 ```
 /plugin marketplace add C:\Users\jaroslaw.przybyl\projekty\feature-dev
-/plugin install <plugin-name>@feature-dev-claude
+/plugin install <plugin-name>@claude-plugins
 ```
 
 ## License

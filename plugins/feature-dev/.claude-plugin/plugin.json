@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "description": "Orchestrator workflow with gated phases for designing, implementing, reviewing, and documenting features (.NET / Go / React / Next.js / Angular).",
   "author": { "name": "Jaroslaw Przybyl" },
-  "repository": "https://github.com/Jared0o/feature-dev-claude",
+  "repository": "https://github.com/Jared0o/claude-plugins",
   "license": "MIT"
 }

@@ -24,8 +24,8 @@ claude --plugin-dir ~/projekty/feature-dev/plugins/feature-dev
 ### From GitHub
 
 ```
-/plugin marketplace add Jared0o/feature-dev-claude
-/plugin install feature-dev@feature-dev-claude
+/plugin marketplace add Jared0o/claude-plugins
+/plugin install feature-dev@claude-plugins
 ```
 
 The first command registers this repo as a Claude Code plugin marketplace (it ships with `.claude-plugin/marketplace.json`). The second installs the `feature-dev` plugin from that marketplace.
@@ -33,8 +33,8 @@ The first command registers this repo as a Claude Code plugin marketplace (it sh
 To update later:
 
 ```
-/plugin marketplace update feature-dev-claude
-/plugin install feature-dev@feature-dev-claude
+/plugin marketplace update claude-plugins
+/plugin install feature-dev@claude-plugins
 ```
 
 After install, restart Claude Code. Verify with `/plugin` (should list `feature-dev`) and `/agents` (should list 11 `feature-dev:fd-*` agents).
